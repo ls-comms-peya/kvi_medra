@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=initial-scale=1.0">
+<title>Reporte KVI - Kiosco Camuchi</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+  }
+  .main-container {
+    max-width: 850px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .header {
+    background: #ed2f42;
+    padding: 25px 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header img {
+    height: 45px;
+    filter: brightness(0) invert(1);
+  }
+  .header-text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .content {
+    padding: 30px 40px;
+  }
+  .card {
+    background: #fff1f2;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ed2f4222;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .card h3 {
+    color: #ed2f42;
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .card p {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+  .ctx-list {
+    margin: 15px auto;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
+    list-style: none;
+    font-size: 13.5px;
+    color: #555;
+  }
+  .ctx-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .ctx-list li:before {
+    content: '•';
+    color: #ed2f42;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .action-btn {
+    background-color: #ed2f42;
+    color: white !important;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(237,47,66,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(237,47,66,0.35);
+  }
+  .meta-container {
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    color: #666;
+  }
+  .section {
+    margin-bottom: 35px;
+  }
+  .section h3 {
+    color: #333;
+    font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ed2f4222;
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12.5px;
+    margin-top: 10px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eef2f6;
+  }
+  th {
+    background: #333;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  tr:nth-child(even) {
+    background: #fafafa;
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 10.5px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .badge-danger { background-color: #ed2f42; }
+  .badge-dark { background-color: #343a40; }
+  .badge-warning { background-color: #ffc107; color: #333; }
+  .badge-info { background-color: #17a2b8; }
+  
+  .footer {
+    background: #222;
+    color: #aaa;
+    padding: 20px;
+    text-align: center;
+    font-size: 11px;
+    border-top: 1px solid #111;
+  }
+  @media (max-width: 600px) {
+    .content { padding: 20px; }
+    .meta-container { flex-direction: column; gap: 8px; }
+    table, thead, tbody, th, td, tr { 
+      display: block; 
+    }
+    thead tr { position: absolute; top: -9999px; left: -9999px; }
+    tr { border: 1px solid #eee; margin-bottom: 15px; border-radius: 8px; padding: 5px; background: white !important; }
+    td { border: none; border-bottom: 1px solid #f8f9fa; position: relative; padding-left: 45%; text-align: left; }
+    td:last-child { border-bottom: none; }
+    td:before { 
+      position: absolute;
+      left: 12px;
+      width: 40%; 
+      padding-right: 10px; 
+      white-space: nowrap;
+      font-weight: bold;
+      color: #777;
+    }
+    /* Etiquetas móviles */
+    .table-no-listados td:nth-of-type(1):before { content: "Producto"; }
+    .table-no-listados td:nth-of-type(2):before { content: "Estado"; }
+    .table-no-listados td:nth-of-type(3):before { content: "Acción"; }
+    
+    .table-bajo-activity td:nth-of-type(1):before { content: "Producto"; }
+    .table-bajo-activity td:nth-of-type(2):before { content: "Alerta"; }
+    .table-bajo-activity td:nth-of-type(3):before { content: "Inactivo"; }
+    .table-bajo-activity td:nth-of-type(4):before { content: "Acción"; }
+    td:before { position: absolute; left: 10px; font-size: 11px; }
+    td { padding-left: 45%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="header">
+    <div class="header-text">
+      <h1>Kiosco Camuchi</h1>
+      <p style="margin:5px 0 0 0; opacity:0.9; font-size:13px; text-transform:uppercase; letter-spacing: 0.5px;">Gestión de Productos Estrella (KVI)</p>
+    </div>
+    <img src="https://lh7-qw.googleusercontent.com/slidesz/AGV_vUdBeH4nJ9sv4jOs-WxF3tj36C31T6uL3omaHGHd8vcJW_T8qz9bEsODUaelMYFDR-rMXF8q3APmzJCJ85YeSXZHUN-e4A-yVRm0DhNiSpDLVt8lLBXPW7VN51gfSJoTAFeCGmLvv_rLQqga1MXXnVQb8r8DNd8O=s2048?key=zDDXHSH6UqNXY7E0Vtfe-A" alt="PedidosYa">
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <h3>Acción requerida</h3>
+      <p style="font-size:15px; color:#333; font-weight: 500;">Detectamos que 20 productos estrella no están listados y 2 productos estrella están apagados.</p>
+      
+      <ul class="ctx-list">
+        <li><strong>Productos Faltantes:</strong> Artículos de alta demanda que no están en tu menú/catálogo de la App. ¡Cargalos hoy mismo!</li>
+        <li><strong>Baja Actividad:</strong> Artículos cargados en la App pero que se mantuvieron <strong>apagados o sin stock</strong> recientemente.</li>
+      </ul>
+
+      <p style="font-weight:bold; color:#333; font-size: 13.5px; margin-top: 15px;">
+        Contar con la disponibilidad de estos productos estrella mejorará sustancialmente las visitas y las ventas de tu negocio.
+      </p>
+      
+      <a href="https://portal-app.pedidosya.com/store-management" target="_blank" class="action-btn">Ir al Gestor de Catálogo</a>
+    </div>
+
+    <div class="meta-container">
+      <div><strong>Comercio ID:</strong> 158766</div>
+      <div><strong>Fecha de Diagnóstico:</strong> 2026-08-22</div>
+    </div>
+
+    <div class="section">
+      <h3>1. Productos Faltantes en el Catálogo <span style="font-size:12px; font-weight: normal; color:#777;">(Carga requerida)</span></h3>
+      <table class="table-no-listados">
+        <thead>
+          <tr>
+            <th style="width: 50%;">Producto</th>
+            <th style="width: 15%;">Estado</th>
+            <th style="width: 35%;">Acción Sugerida</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>AGUA MINERAL VILLA DEL SUR SIN GAS 2.25 L</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>AGUA MINERAL VILLAMANAOS SIN GAS 2 L</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>AGUA MINERAL VILLAVICENCIO SIN GAS 2 L</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>AGUA SABORIZADA AQUARIUS PERA 1.5 L</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>AGUA SABORIZADA VILLA DEL SUR LEVITE POMELO SIN GAS 1.5 L</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>ALFAJOR MILKA TRIPLE MOUSSE BLANCO</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>BEBIDA ENERGIZANTE RED BULL SABOR ORIGINAL 250 ML</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>BOMBONES FRANUI FREE SIN GLUTEN 150 G</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>BOMBONES FRANUI PINK FRAMBUESAS CON CHOCOLATE BLANCO 150 G</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>CARAMELO MASTICABLE LENGUETAZO SABOR TUTTI FRUTTI</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>CERVEZA ANDES ORIGEN IPA 473 ML</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>CERVEZA SCHNEIDER RUBIA 473 ML</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>CERVEZA SCHNEIDER RUBIA 710 ML</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>CHICLE BELDENT MENTA</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>CHOCOLATE KINDER BUENO 43 G</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>GALLETA OBLEA ARCOR TURRON Y MANI 25 G</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>GOMITAS MOGUL CEREBRITOS 30 G</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>HELADO DE AGUA SIN TACC TORPEDO SABOR FRUTILLA 63 G</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>HIELO</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+            <tr>
+              <td><strong>PAPEL PARA ARMAR OCB CAÑAMO 1 1/4 (50 UNIDADES)</strong></td>
+              <td><span class="badge badge-danger">Faltante</span></td>
+              <td>NOT FOUND: Solicitar el alta de catálogo en la App.</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>2. Productos Apagados o Sin Stock <span style="font-size:12px; font-weight: normal; color:#777;">(Activación requerida)</span></h3>
+      <table class="table-bajo-activity">
+        <thead>
+          <tr>
+            <th style="width: 40%;">Producto</th>
+            <th style="width: 20%;">Categoría Alerta</th>
+            <th style="width: 15%; text-align: center;">Inactividad</th>
+            <th style="width: 25%;">Acción Sugerida</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><strong>CERVEZA CORONA 710 ML</strong></td>
+              <td><span class="badge badge-dark">Inactivo >90 días</span></td>
+              <td style="text-align: center;">Nunca activo</td>
+              <td>DESACTIVADOS >90 DIAS: Recomendar reposición o activación de stock.</td>
+            </tr>
+            <tr>
+              <td><strong>GASEOSA SPRITE LIMA LIMON 2.25 L</strong></td>
+              <td><span class="badge badge-dark">Inactivo >90 días</span></td>
+              <td style="text-align: center;">Nunca activo</td>
+              <td>DESACTIVADOS >90 DIAS: Recomendar reposición o activación de stock.</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="footer">
+    &copy; 2026 PedidosYa Argentina - Área de Business Development
+  </div>
+</div>
+
+</body>
+</html>
