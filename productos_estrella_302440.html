@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte KVI - Drugstore Saco Belgrano</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+  }
+  .main-container {
+    max-width: 850px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .header {
+    background: #ed2f42;
+    padding: 25px 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header img {
+    height: 45px;
+    filter: brightness(0) invert(1);
+  }
+  .header-text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .content {
+    padding: 30px 40px;
+  }
+  .card {
+    background: #fff1f2;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ed2f4222;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .card h3 {
+    color: #ed2f42;
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .card p {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+  .ctx-list {
+    margin: 15px auto;
+    padding: 0;
+    max-width: 600px;
+    text-align: left;
+    list-style: none;
+    font-size: 13.5px;
+    color: #555;
+  }
+  .ctx-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .ctx-list li:before {
+    content: '•';
+    color: #ed2f42;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .action-btn {
+    background-color: #ed2f42;
+    color: white !important;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(237,47,66,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(237,47,66,0.35);
+  }
+  .meta-container {
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    color: #666;
+  }
+  .sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .section {
+    margin-bottom: 35px;
+  }
+  .section h3 {
+    color: #333;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #ed2f4222;
+    padding-bottom: 6px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eef2f6;
+  }
+  th {
+    background: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  tr:nth-child(even) {
+    background: #fafafa;
+  }
+  .footer {
+    background: #222;
+    color: #aaa;
+    padding: 20px;
+    text-align: center;
+    font-size: 11px;
+    border-top: 1px solid #111;
+  }
+  @media (max-width: 768px) {
+    .sections-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="header">
+    <div class="header-text">
+      <h1>Drugstore Saco Belgrano</h1>
+      <p style="margin:5px 0 0 0; opacity:0.9; font-size:13px; text-transform:uppercase; letter-spacing: 0.5px;">Gestión de Productos Estrella (KVI)</p>
+    </div>
+    <img src="https://lh7-qw.googleusercontent.com/slidesz/AGV_vUdBeH4nJ9sv4jOs-WxF3tj36C31T6uL3omaHGHd8vcJW_T8qz9bEsODUaelMYFDR-rMXF8q3APmzJCJ85YeSXZHUN-e4A-yVRm0DhNiSpDLVt8lLBXPW7VN51gfSJoTAFeCGmLvv_rLQqga1MXXnVQb8r8DNd8O=s2048?key=zDDXHSH6UqNXY7E0Vtfe-A" alt="PedidosYa">
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <h3>Acción requerida</h3>
+      <p style="font-size:15px; color:#333; font-weight: 500;">Detectamos que 61 productos estrella no están listados en tu catálogo.</p>
+      
+      <ul class="ctx-list">
+        <li><strong>Productos Faltantes:</strong> Artículos de alta demanda que no están en tu menú o catálogo de la App. ¡Cargalos hoy mismo!</li>
+        <li><strong>Baja Actividad:</strong> Artículos cargados en la App pero que se mantuvieron <strong>apagados o sin stock</strong> recientemente.</li>
+      </ul>
+
+      <p style="font-weight:bold; color:#333; font-size: 13.5px; margin-top: 15px;">
+        Contar con la disponibilidad de estos productos estrella mejorará sustancialmente las visitas y las ventas de tu negocio.
+      </p>
+      
+      <a href="https://portal-app.pedidosya.com/store-management" target="_blank" class="action-btn">Ir al Gestor de Catálogo</a>
+    </div>
+
+    <div class="meta-container">
+      <div><strong>Comercio ID:</strong> 302440</div>
+      <div><strong>Fecha de Diagnóstico:</strong> 2026-08-23</div>
+    </div>
+
+    <div class="sections-grid">
+      <div class="section">
+        <h3>1. No Listados (Ni figuran)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>AGUA MINERAL VILLAMANAOS SIN GAS 2 L</td>
+            </tr>
+            <tr>
+              <td>AGUA MINERAL VILLAVICENCIO CON GAS 1.5 L</td>
+            </tr>
+            <tr>
+              <td>AGUA MINERAL VILLAVICENCIO SIN GAS 1.5 L</td>
+            </tr>
+            <tr>
+              <td>AGUA MINERAL VILLAVICENCIO SIN GAS 2 L</td>
+            </tr>
+            <tr>
+              <td>AGUA SABORIZADA VILLA DEL SUR LEVITE POMELO SIN GAS 1.5 L</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR BON O BON BLANCO</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR CHOCOTORTA</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR FANTOCHE CHOCOLATE TRIPLE</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR JORGELIN TRIPLE BLANCO</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR JORGELIN TRIPLE NEGRO</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR JORGITO BLANCO</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR JORGITO NEGRO</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR MILKA TRIPLE MOUSSE</td>
+            </tr>
+            <tr>
+              <td>ALFAJOR TRIPLE DULCE DE LECHE GUAYMALLEN</td>
+            </tr>
+            <tr>
+              <td>BANANITA DOLCA 30 G</td>
+            </tr>
+            <tr>
+              <td>BARRA DE CHOCOLATE SNICKERS RELLENO CON CARAMELO</td>
+            </tr>
+            <tr>
+              <td>BEBIDA ENERGIZANTE MONSTER ENERGY 473 ML</td>
+            </tr>
+            <tr>
+              <td>BEBIDA ENERGIZANTE MONSTER PIPELINE PUNCH 473 ML</td>
+            </tr>
+            <tr>
+              <td>BEBIDA ENERGIZANTE RED BULL SABOR ORIGINAL 250 ML</td>
+            </tr>
+            <tr>
+              <td>BEBIDA ENERGIZANTE SPEED UNLIMITED 250 ML</td>
+            </tr>
+            <tr>
+              <td>BEBIDA ENERGIZANTE SPEED UNLIMITED 473 ML</td>
+            </tr>
+            <tr>
+              <td>BIZCOCHOS DON SATUR SALADO 200 G</td>
+            </tr>
+            <tr>
+              <td>BOMBONES FRANUI DE FRAMBUESA CON CHOCOLATE DE LECHE Y BLANCO 150 G</td>
+            </tr>
+            <tr>
+              <td>BOMBONES FRANUI DE FRAMBUESA EN CHOCOLATE AMARGO Y BLANCO 150 G</td>
+            </tr>
+            <tr>
+              <td>BOMBONES FRANUI FREE SIN GLUTEN 150 G</td>
+            </tr>
+            <tr>
+              <td>BOMBONES FRANUI PINK FRAMBUESAS CON CHOCOLATE BLANCO 150 G</td>
+            </tr>
+            <tr>
+              <td>CARAMELO MASTICABLE LENGUETAZO SABOR TUTTI FRUTTI</td>
+            </tr>
+            <tr>
+              <td>CARAMELOS SUGUS CONFITADOS 50 G</td>
+            </tr>
+            <tr>
+              <td>CERVEZA ANDES ORIGEN IPA 473 ML</td>
+            </tr>
+            <tr>
+              <td>CERVEZA ANDES ORIGEN RUBIA 473 ML</td>
+            </tr>
+            <tr>
+              <td>CERVEZA CORONA 710 ML</td>
+            </tr>
+            <tr>
+              <td>CERVEZA STELLA ARTOIS 473 ML</td>
+            </tr>
+            <tr>
+              <td>CHICLE BELDENT MENTA</td>
+            </tr>
+            <tr>
+              <td>CHICLE BELDENT MENTA FUERTE</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE CADBURY YOGHURT DE FRUTILLA 29 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE DOS CORAZONES 26 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE FELFORT FEELING 20 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE KINDER 50 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE KINDER BUENO 43 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE KINDER BUENO BLANCO 39 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE KITKAT 41.5 G</td>
+            </tr>
+            <tr>
+              <td>CHOCOLATE SHOT CON MANI 35 G</td>
+            </tr>
+            <tr>
+              <td>FILTROS GIZEH</td>
+            </tr>
+            <tr>
+              <td>FILTROS OCB</td>
+            </tr>
+            <tr>
+              <td>GALLETA OBLEA ARCOR TURRON Y MANI 25 G</td>
+            </tr>
+            <tr>
+              <td>GASEOSA COCA COLA ZERO 2.25 L</td>
+            </tr>
+            <tr>
+              <td>GASEOSA COCA COLA ZERO 500 ML</td>
+            </tr>
+            <tr>
+              <td>GASEOSA COCA-COLA ORIGINAL 2.25 L</td>
+            </tr>
+            <tr>
+              <td>GASEOSA COCA-COLA ORIGINAL 310 ML</td>
+            </tr>
+            <tr>
+              <td>GASEOSA MANAOS COLA 2.25 L</td>
+            </tr>
+            <tr>
+              <td>GASEOSA MANAOS LIMA LIMON 2.25 L</td>
+            </tr>
+            <tr>
+              <td>GASEOSA MANAOS POMELO 2.25 L</td>
+            </tr>
+            <tr>
+              <td>GASEOSA SPRITE LIMA LIMON 2.25 L</td>
+            </tr>
+            <tr>
+              <td>GOMITAS MOGUL CEREBRITOS 30 G</td>
+            </tr>
+            <tr>
+              <td>GOMITAS MOGUL TIBURON 30 G</td>
+            </tr>
+            <tr>
+              <td>HELADO DE AGUA SIN TACC TORPEDO SABOR FRUTILLA 63 G</td>
+            </tr>
+            <tr>
+              <td>JUGO CITRIC NARANJA CLASICA 1 L</td>
+            </tr>
+            <tr>
+              <td>OBLEA RHODESIA CLASICA 22 G</td>
+            </tr>
+            <tr>
+              <td>PAPEL OCB PREMIUM 50 UNIDADES</td>
+            </tr>
+            <tr>
+              <td>PAPEL OCB X-PERT 1 1/4 50 UNIDADES</td>
+            </tr>
+            <tr>
+              <td>PAPEL PARA ARMAR OCB CAÑAMO 1 1/4 (50 UNIDADES)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h3>2. Baja Actividad (Apagados)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td style="color:gray; font-style:italic; text-align:center; padding: 15px;">
+            No hay productos con baja actividad.
+          </td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    &copy; 2026 PedidosYa Argentina - Área de Business Development
+  </div>
+</div>
+
+</body>
+</html>
